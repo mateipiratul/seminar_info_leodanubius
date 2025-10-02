@@ -1,0 +1,429 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[romanian]{babel}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage[margin=1.2cm]{geometry}
+
+\newcommand{\highlight}[1]{{\ttfamily\color{red}#1}}
+
+\title{\textbf{Probleme de eficiență – pbinfo.ro}}
+\date{}
+\begin{document}
+\maketitle
+
+\section{Sesiunea iunie-iulie 2024}
+De-a lungul unui traseu montan este utilizată o succesiune de marcaje turistice, care trebuie urmate în acea ordine. Pentru fiecare marcaj se cunoaște cota (înălțimea, măsurată în metri) la care este plasat. Numim \textbf{scară} într-un traseu o secvență de marcaje aflate pe poziții consecutive în cadrul traseului, care au drept cote numere consecutive, ordonate strict crescător. O scară este formată din cel puțin două marcaje, iar lungimea acesteia este egală cu numărul de marcaje care o compun.
+
+\vspace{0.2cm}
+\noindent Fișierul \highlight{bac.txt} conține un șir de cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[10,10^4]$}, separate prin câte un spațiu, reprezentând cotele marcajelor turistice din cadrul unui traseu, în ordinea în care se succed în acesta. Se cere să se afișeze pe ecran, separate prin câte un spațiu, în ordine strict crescătoare, cotele corespunzătoare marcajelor unei scări de lungime maximă pe acest traseu. Dacă în cadrul traseului există mai multe astfel de scări, se afișează doar cotele corespunzătoare marcajelor uneia dintre ele, iar dacă nu există nicio scară, pe ecran se afișează mesajul \highlight{nu exista}. Proiectați un algoritm eficient din punctul de vedere al timpului de executare și al spațiului de memorie utilizat.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele \highlight{500 600 601 405 569 570 700 701 625 626 627 520} atunci pe ecran se afișează \highlight{625 626 627}.
+
+
+\section{Sesiunea specială, mai 2024}
+Fișierul \highlight{numere.in} conține un șir de cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[0,99]$}. Numerele din fișier sunt separate prin câte un spațiu.
+
+\vspace{0.2cm}
+\noindent Se cere să se determine primul și ultimul număr din șir care conțin cea mai mare cifră ce apare în scrierea numerelor din fișier. Numerele determinate se afișează pe ecran, în ordinea apariției lor în șir, separate printr-un spațiu. Dacă nu există două astfel de numere pe poziții distincte, se afișează pe ecran mesajul \highlight{nu exista}. Proiectați un algoritm eficient din punctul de vedere al timpului de executare și al spațiului de memorie utilizat.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele \highlight{34 5 38 30 87 70 11 8 82 25} se afișează pe ecran \highlight{38 82}, dacă fișierul conține numerele \highlight{34 5 38 30 87 70 11 8 38 25} se afişează pe ecran \highlight{38 38}, iar dacă fișierul conține numerele \highlight{34 5 38 30} se afișează pe ecran \highlight{nu exista}.
+
+
+\section{Simulare martie 2024}
+Un șir se numește de tip \textbf{api} dacă numărul de apariții ale fiecărui termen este mai mic sau egal cu acel termen și are o paritate egală cu a acestuia.
+
+\vspace{0.2cm}
+\noindent Fișierul \highlight{$bac.in$} conține un șir de cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[1,10^3]$}, separate prin câte un spațiu. Se cere să se afișeze pe ecran mesajul \highlight{$DA$}, dacă șirul este de tip api, sau mesajul \highlight{$NU$} în caz contrar. Proiectați un algoritm eficient din punctul de vedere al timpului de executare
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele \highlight{6 27 2 6 27 6 6 14 14 2 27} se afișează pe ecran \highlight{$DA$} (termenul par \highlight{$6$} apare de \highlight{$4$} ori, \highlight{$4$} fiind tot număr par și \highlight{$4\leq6$}, termenii pari \highlight{$2$} și \highlight{$14$} apar de câte \highlight{$2$} ori, \highlight{$2$} fiind tot număr par și \highlight{$2\leq2$}, respectiv \highlight{$2\leq14$}, iar termenul impar \highlight{$27$} apare de \highlight{$3$} ori, \highlight{$3$} fiind tot număr impar și \highlight{$3\leq27$}).
+  
+\newpage
+\section{Sesiunea august 2023}
+Fișierul \highlight{$date.in$} conține pe prima linie două numere naturale din intervalul \highlight{$[1,10^6]$}, \highlight{$m$} și \highlight{$n$}, iar pe următoarele două linii numere naturale din intervalul \highlight{$[0,10^2]$}: pe a doua linie un șir \highlight{$A$}, de \highlight{$m$} numere, iar pe a treia linie un șir \highlight{$B$}, de \highlight{$n$} numere. Numerele aflate pe aceeași linie sunt separate prin câte un spațiu.
+
+\vspace{0.2cm}
+\noindent Se cere să se afișeze pe ecran numărul maxim de perechi de forma \highlight{$(pa,pb)$} (\highlight{$pa \in [1,m]$}, \highlight{$pb \in  [1,n]$}), cu proprietatea că termenul de pe poziția \highlight{$pa$} din șirul \highlight{$A$} are aceeași valoare cu termenul de pe poziția \highlight{$pb$} din șirul \highlight{$B$} și că fiecare poziție, corespunzătoare șirului \highlight{$A$}, respectiv șirului \highlight{$B$}, apare în cel mult o pereche, ca în exemplu. Proiectați un algoritm eficient din punctul de vedere al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele
+\begin{verbatim}
+8 9
+1 0 4 1 5 3 5 5
+1 1 1 7 5 3 5 3 0
+\end{verbatim}
+\noindent se afișează pe ecran \highlight{$6$}, de exemplu, pentru perechile \highlight{$(1,1)$}, \highlight{$(2,9)$}, \highlight{$(4,2)$}, \highlight{$(5,5)$}, \highlight{$(6,6)$}, \highlight{$(7,7)$} sau pentru perechile \highlight{$(1,2)$}, \highlight{$(2,9)$}, \highlight{$(4,1)$}, \highlight{$(5,7)$}, \highlight{$(6,8)$}, \highlight{$(8,5)$}.
+
+\section{Sesiunea iunie-iulie 2023}
+Un număr natural \highlight{$x$} este numit prefix al unui număr natural \highlight{$y$} dacă se obține din acesta prin eliminarea a cel puțin unei cifre de la dreapta sa, și este numit sufix al lui \highlight{$y$} dacă se obține din acesta prin eliminarea a cel puțin unei cifre de la stânga sa.
+
+\vspace{0.2cm}
+\noindent Exemplu: \highlight{$15$} este prefix pentru \highlight{$154$} sau \highlight{$1521$}, este sufix pentru \highlight{$3415$} sau \highlight{$5115$}, dar nu este nici prefix, nici sufix pentru \highlight{$15$}.
+
+\vspace{0.2cm}
+\noindent Fișierul \highlight{$bac.txt$} conține maximum \highlight{$10^6$} numere naturale din intervalul \highlight{$[10,10^4)$}, separate prin câte un spațiu. Se cere să se afișeze pe ecran numărul valorilor de două cifre care apar de același număr de ori ca sufix, respectiv ca prefix al numerelor din șirul aflat în fișier. Proiectați un algoritm eficient din punctul de vedere al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele \highlight{342 1684 2134 5434 111 98 98 3405 3412 7016 8634 1010 102 310} se afișează pe ecran: \highlight{$4$} (pentru valorile \highlight{$10$}, \highlight{$11$}, \highlight{$16$}, \highlight{$34$}).
+
+
+\section{Sesiunea specială, mai 2023}
+Intervalul \highlight{$[x,y]$} se numește \highlight{$p$}-interval pentru un șir de valori întregi, dacă oricare dintre primii \highlight{$p$} termeni ai șirului aparține intervalului, iar numărul de valori întregi distincte din interval este minim.
+
+\vspace{0.2cm}
+Exemplu: pentru șirul \highlight{2, 7, -1, 8, 3, 10} există [2,2] ca \highlight{$1$}-interval, \highlight{$[-1,8]$} ca \highlight{$4$}-interval și 5-interval etc.
+
+\vspace{0.2cm}
+Fișierul \highlight{bac.txt} conține un șir de cel mult \highlight{$10^6$} numere întregi din intervalul \highlight{$[-10^9,10^9]$}, separate prin câte un spațiu. Se cere să se afișeze pe ecran cea mai mică și cea mai mare valoare a lui \highlight{$p$} (\highlight{$p\geq2$}) cu proprietatea că \highlight{$(p-1)$}-interval este identic cu \highlight{$p$}-interval pentru șirul aflat în fișier. Valorile afișate pot fi egale, iar dacă nu există nicio astfel de valoare, pe ecran se afișează mesajul \highlight{nu exista}. Proiectați un algoritm eficient din punctul de vedere al timpului de executare și al memoriei utilizate.
+
+\vspace{0.2cm}
+\textbf{Exemplu:} dacă fișierul \highlight{bac.txt} conține numerele \highlight{2 7 1 8 3 10 6 -3 -2 13} se afișează pe ecran \highlight{5 9} (intervale conform cerinței se obțin pentru valorile \highlight{$5$}, \highlight{$7$} și \highlight{$9$} ale lui \highlight{$p$}), iar dacă fișierul conține numerele \highlight{2 7 1 0 8 10 -3 13}, se afișează pe ecran \highlight{nu exista}.
+
+
+\section{Simulare, martie 2023}
+Pentru a studia un metal, s-a urmărit comportamentul său într-o succesiune de pași, la fiecare pas metalul fiind supus unei anumite temperaturi. Pașii sunt numerotați cu valori naturale consecutive, începând de la \highlight{$1$}. Un pas se numește \textbf{reprezentativ} dacă la niciunul dintre pașii anteriori nu este utilizată o temperatură strict mai mare decât la acest pas. Dacă există o secvență de pași consecutivi la care se utilizează aceeași temperatură, se consideră reprezentativ doar primul pas din secvență.
+
+\vspace{0.2cm}
+Fișierul \highlight{bac.txt} conține cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[0,10^4]$}, separate prin câte un spațiu, reprezentând temperaturile la care este supus metalul, în ordinea pașilor corespunzători. Se cere să se afișeze pe ecran, separați prin câte un spațiu, pașii reprezentativi pentru datele din fișier. Proiectați un algoritm eficient din punctul de vedere al timpului de executare și al spațiului de memorie utilizat.
+
+\vspace{0.2cm}
+\textbf{Exemplu:} dacă fișierul conține numerele \highlight{7 4 9 10 10 10 3 9 2 10 10 8 2 30} se afișează pe ecran \highlight{1 3 4 10 14}.
+
+
+\section{Sesiunea august 2022}
+Numim \textbf{secvență paritară} a unui șir de numere naturale un subșir al acestuia, format din termeni cu aceeași paritate, aflați pe poziții consecutive în șirul dat. Lungimea secvenței este egală cu numărul de termeni ai acesteia.
+
+\vspace{0.2cm}
+\noindent Fișierul \highlight{bac.txt} conține un șir de cel puțin două și cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[0,10^9]$}. Numerele sunt separate prin câte un spațiu, iar în șir există cel puțin doi termeni cu aceeași paritate pe poziții consecutive.
+
+\vspace{0.2cm}
+\noindent Se cere să se afișeze pe ecran numărul secvențelor paritare de lungime maximă din șirul aflat în fișier, precum și această lungime maximă. Numerele afișate sunt separate printr-un spațiu. Proiectați un algoritm eficient din punctul de vedere al timpului de executare și al memoriei utilizate.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele \highlight{2 3 5 1 7 9 8 4 4 11 15 17 21 11 6 11 15 17 21 11 6 5 2 6 4 0 16} atunci pe ecran se afișează valorile \highlight{4 5}.
+
+
+\section{Sesiunea specială, mai 2022}
+Numim \textbf{secvență progresivă} a unui șir crescător de numere naturale un subșir al acestuia, format din termeni aflați pe poziții consecutive în șirul dat, cu proprietatea că fiecare termen apare în subșir de un număr de ori egal cu valoarea sa. Lungimea secvenței este egală cu numărul de termeni ai acesteia.
+
+\vspace{0.2cm}
+\noindent Fișierul \highlight{bac.txt} conține un șir de cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[1,10^6]$}, astfel încât orice termen al șirului apare de un număr de ori cel mult egal cu valoarea sa. Numerele sunt separate prin câte un spațiu.
+
+\vspace{0.2cm}
+\noindent Se cere să se afișeze pe ecran lungimea maximă a unei secvențe progresive din șirul aflat în fișier.
+
+\vspace{0.2cm}
+\noindent Proiectați un algoritm eficient din punctul de vedere al timpului de executare și al memoriei utilizate.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele \highlight{1 2 2 3 3 3 4 4 4 4 6 6 6 6 6 6 7 7 7 8 8 8 8 8 8 8 8} atunci pe ecran se afișează valoarea \highlight{10}.
+
+\section{Sesiunea iunie-iulie 2022}
+Fișierul \highlight{bac.txt} conține numere naturale din intervalul \highlight{$[1,10^9]$}, astfel: pe prima linie două numere, \highlight{$x$} și \highlight{$y$} (\highlight{$x < y$}), iar pe a doua linie un șir de cel mult \highlight{$10^6$} numere, ordonate crescător. Numerele aflate pe aceeași linie a fișierului sunt separate prin câte un spațiu.
+
+\vspace{0.2cm}
+\noindent Se cere să se afişeze pe ecran numărul de valori distincte din șirul aflat pe a doua linie a fișierului care aparțin intervalului \highlight{[x,y]}. Proiectați un algoritm eficient din punctul de vedere al timpului de executare și al memoriei utilizate.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele
+\begin{verbatim}
+2 9
+1 1 1 2 2 3 5 5 5 5 6 6 7 8 10 10 12 15 21 21
+\end{verbatim}
+\noindent se afișează pe ecran \highlight{6}.
+
+
+\section{Simulare 2022}
+Se citește de la tastatură un număr natural, \highlight{$n$} (\highlight{$1\leq n\leq 10^9$}), și se cere să se scrie în fișierul text \highlight{bac.txt} cel mai mare număr natural \highlight{$p$} cu proprietatea că numărul \highlight{$45^p$} este divizor al numărului obținut prin evaluarea produsului \highlight{$1\times2\times3\times\dots\times n$}.
+
+\vspace{0.2cm}
+\noindent Proiectați un algoritm eficient din punctul de vedere al timpului de executare și al memoriei utilizate.
+
+\vspace{0.2cm}
+\noindent Exemplu: dacă \highlight{$n=14$} fișierul conține numărul \highlight{$2$} (\highlight{$45^2=2025$} este divizor al lui \highlight{$1\times2\times3\times\dots\times14=87178291200$}).
+
+\newpage
+\section{Sesiunea august-septembrie 2021}
+Numim \textbf{pereche asemenea} \highlight{(x,y)} două numere naturale cu cel puțin două cifre, \highlight{$x$} și \highlight{$y$}, cu proprietatea că ultimele două cifre ale lui \highlight{$x$} sunt egale cu ultimele două cifre ale lui, \highlight{$y$}, dispuse eventual în altă ordine.
+
+\vspace{0.2cm}
+\noindent Fișierul \highlight{numere.in} conține numere naturale din intervalul \highlight{$[10,10^5]$}: pe prima linie două numere \highlight{$na$} și \highlight{$nb$}, pe a doua linie un șir \highlight{$A$} de \highlight{$na$} numere, iar pe a treia linie un șir \highlight{$B$} de \highlight{$nb$} numere. Numerele aflate pe aceeași linie a fișierului sunt separate prin câte un spațiu.
+
+\vspace{0.2cm}
+\noindent Se cere să se afișeze pe ecran numărul de perechi asemenea \highlight{(x,y)}, cu proprietatea că \highlight{$x$} este un termen al șirului \highlight{$A$}, iar \highlight{$y$} este un termen al șirului \highlight{$B$}. Proiectați un algoritm eficient din punctul de vedere al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele
+\begin{verbatim}
+9 7 
+112 20 42 112 5013 824 10012 55 155 
+402 1024 321 521 57 6542 255
+\end{verbatim}
+se afișează pe ecran numărul \highlight{$13$}, fiind atâtea perechi asemenea: \highlight{$(112,321)$}, \highlight{$(112,521)$}, \highlight{$(20,402)$}, \highlight{$(42,1024)$}, \highlight{$(42,6542)$}, \highlight{$(112,321)$}, \highlight{$(112,521)$}, \highlight{$(824,1024)$}, \highlight{$(824,6542)$}, \highlight{$(10012,321)$}, \highlight{$(10012,521)$}, \highlight{$(55,255)$}, \highlight{$(155,255)$}.
+
+\section{Sesiunea iunie-iulie 2021}
+Numărul natural \highlight{$a$} se numește \textbf{sufix} al numărului natural \highlight{$b$} dacă \highlight{$a$} este egal cu \highlight{$b$} sau dacă \highlight{$b$} se poate obține din \highlight{$a$} prin alipirea la stânga a unor noi cifre.
+
+\vspace{0.2cm}
+\noindent Fişierul \highlight{bac.txt} conţine pe prima linie un număr natural \highlight{$x$} (\highlight{$x \in [100,999]$}), iar pe a doua linie un șir de cel mult \highlight{$10^5$} numere naturale din intervalul \highlight{$[0,10^9]$}. Numerele din șir sunt separate prin câte un spațiu. Se cere să se afișeze pe ecran ultimii doi termeni ai șirului, aflați pe \highlight{poziții consecutive} în acesta, care îl au drept sufix pe numărul \highlight{$x$}. Numerele sunt afișate în ordinea în care apar în șir, separate printr-un spațiu, iar dacă nu există doi astfel de termeni, se afișează pe ecran mesajul \highlight{nu exista}. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate și al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul \highlight{bac.txt} conține numerele
+\begin{verbatim}
+210
+3445 210 893210 1245 1210 3210 15210 67120 20210 12
+\end{verbatim}
+pe ecran se afișează \highlight{3210 15210}.
+
+
+
+\section{Subiecte antrenament, 2021, testul 12}
+Fișierul \highlight{bac.txt} conține un șir de cel mult \highlight{$10^5$} numere naturale din intervalul \highlight{$[1,10^9]$}, separate prin câte un spațiu. Se cere să se afișeze pe ecran cea mai mare poziție pe care ar putea-o ocupa primul termen al șirului aflat în fișier în șirul format cu aceleași valori, ordonat descrescător. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate și al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul \highlight{bac.txt} conține numerele \highlight{15 7 15 17 6 4 21} se afișează pe ecran \highlight{$4$} (\highlight{$15$} se află pe a treia și pe a patra poziție în șirul \highlight{21, 17, 15, 15, 7, 6, 4}).
+
+
+\section{Subiecte antrenament, 2021, testul 11}
+Se consideră șirul \highlight{1, 3, 7, 13, 21, 31, 43, \dots} definit astfel: \highlight{$f_0=1$}, iar \highlight{$f_n=f_(n-1) + 2 \times n$}, dacă \highlight{$n \geq 1$} (unde \highlight{$n$} este un număr natural). Se citesc de la tastatură două numere naturale din intervalul \highlight{$[1,10^9]$}, \highlight{$x$} și \highlight{$y$} (\highlight{$x<y$}), reprezentând doi termeni aflați pe poziții consecutive în șirul dat, și se cere să se scrie în fișierul text \highlight{bac.out}, separați prin câte un spațiu, toți termenii șirului mai mici sau egali cu \highlight{$y$}, în ordine inversă a apariției lor în șir. Proiectați un algoritm eficient din punctul de vedere al spațiului de memorie și al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă \highlight{x=21} și \highlight{y=31}, fişierul conţine valorile \highlight{31 21 13 7 3 1}
+
+\section{Subiecte antrenament, 2021, testul 10}
+Fişierul \highlight{bac.txt} conține un șir de cel mult \highlight{$10^5$} numere naturale din intervalul \highlight{$[1,10^9]$}, separate prin câte un spațiu. Se cere să se afișeze pe ecran cea mai mică poziție pe care ar putea-o ocupa primul termen al șirului aflat în fișier în șirul format cu aceleași valori, ordonat crescător. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate și al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține \highlight{15 7 15 17 6 4} se afișează pe ecran \highlight{$4$} (\highlight{15} se află pe a patra și pe a cincea poziție în șirul \highlight{4, 6, 7, 15, 15, 17}).
+
+\section{Subiecte antrenament, 2021, testul 9}
+Fișierul \highlight{numere.txt} conține cel mult \highlight{$10^5$} numere naturale din intervalul \highlight{$[1,10^9]$}, câte unul pe fiecare linie.
+
+\vspace{0.2cm}
+\noindent Se cere să se afișeze pe ecran cel mai mare număr care se poate forma cu toate cifrele care apar în numerele din fișier, ca în exemplu. Proiectați un algoritm eficient din punctul de vedere al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține:
+\begin{verbatim}
+263
+39628
+79
+887308
+\end{verbatim}
+se afișează \highlight{$9988887766333220$}
+
+\section{Subiecte antrenament, 2021, testul 8}
+Fișierul bac.txt conține un șir de cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[0,10^9]$}.
+
+\vspace{0.2cm}
+\noindent Se cere să se determine și să se afișeze pe ecran, separate printr-un spațiu, ultimele două numere impare (nu neapărat distincte) din șirul aflat în fișier, sau mesajul \highlight{nu exista}, dacă nu există două astfel de numere. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate și al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține valorile \highlight{122 1635 628 1413 1647 900 3001 4252} se afișează pe ecran \highlight{1647 3001}
+
+
+\section{Subiecte antrenament, 2021, testul 7}
+Fișierul \highlight{bac.txt} conține cel mult \highlight{$10^6$} cifre, separate prin câte un spațiu.
+
+\vspace{0.2cm}
+\noindent Se cere să se afișeze pe ecran, separate prin câte un spațiu, toate cifrele pare care apar în fișier sau mesajul \highlight{nu exista}, dacă nu există astfel de cifre. Proiectați un algoritm eficient din punctul de vedere al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține cifrele \highlight{3 3 0 8 2 1 2 1 3 7 1 5 2 7 1 0 3 2 3} pe ecran se afișează, de exemplu în ordine crescătoare, cifrele \highlight{0 0 2 2 2 2 8}
+
+\section{Subiecte antrenament, 2021, testul 6}
+Fișierul \highlight{bac.in} conține un șir de cel puțin patru și cel mult \highlight{$10^5$} numere întregi nenule din intervalul \highlight{$-10^9,10^9$}, dintre care trei sunt negative, iar restul pozitive. Numerele sunt separate prin câte un spațiu. O secvență este formată din termeni aflați pe poziții consecutive în șir, iar lungimea secvenței este egală cu numărul de termeni ai acesteia.
+
+\vspace{0.2cm}
+\noindent Se cere să se afișeze pe ecran lungimea unei secvențe din șirul aflat în fișier care conține o singură valoare negativă și un număr maxim de valori pozitive. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate și al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele \highlight{15 21 -61 9 870 -23 11 5 8 -81 5 14} pe ecran se afișează \highlight{$6$} (corespunzător secvențelor \highlight{9 870 -23 11 5 8} sau \highlight{11 5 8 -81 5 14}).
+
+\section{Subiecte antrenament, 2021, testul 5}
+Fişierul \highlight{bac.txt} conține numere naturale din intervalul \highlight{$[2,10^6]$}: pe prima linie \highlight{$n$}, iar pe a doua linie un șir de \highlight{$n$} numere, separate prin câte un spațiu. Se cere să se afișeze pe ecran, pentru fiecare număr natural \highlight{$i$} (\highlight{$i \in [1,n]$}), cea mai mare dintre primele \highlight{$i$} valori ale șiruluui aflat în fișier. Numerele afișate sunt separate prin câte un spațiu. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate şi al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține 
+\begin{verbatim}
+12
+4 6 3 7 8 1 6 2 7 9 10 8
+\end{verbatim}
+se afișează pe ecran
+\begin{verbatim}
+4 6 6 7 8 8 8 8 8 9 10 10
+\end{verbatim}
+
+\section{Subiecte antrenament, 2021, testul 3}
+Două numere naturale sunt numite \highlight{z-prietene} dacă au aceeași cifră a zecilor.
+
+\vspace{0.2cm}
+\noindent Fișierul \highlight{bac.in} conține cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[10,10^9]$}, separate prin câte un spațiu.
+
+\vspace{0.2cm}
+\noindent Se cere să se afișeze pe ecran pozițiile din șir pe care se află termeni precedați de un număr maxim de valori z-prietene cu ei. Numerele afișate sunt separate prin câte un spațiu. Proiectați un algoritm eficient din punctul de vedere al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele \highlight{726 358 98 157 20 49 128 879 659 271} pe ecran se afișează numerele \highlight{7 9} (termenii \highlight{$128$}, respectiv \highlight{$659$} respectă proprietatea cerută).
+
+\section{Subiecte antrenament, 2021, testul 2}
+Fișierul \highlight{bac.in} conține un șir de cel mult \highlight{$10^6$} numere întregi din intervalul \highlight{$[-10^9,10^9]$}. Cel puțin un număr din șir este pozitiv.
+
+\vspace{0.2cm}
+\noindent Se cere să se afișeze pe ecran lungimea maximă a unei secvențe a șirului care fie începe, fie se încheie cu un număr pozitiv. O secvență este formată din termeni aflați pe poziții consecutive în șir, iar lungimea secvenței este egală cu numărul de termeni ai acesteia. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate și al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele \highlight{-15 -7 4 -7 21-5 -200 -26 52 -24 -7 -9 -20} pe ecran se afișează \highlight{$11$} (corespunzător secvenței \highlight{4 -7 21 -5 -200 -26 52 -24 -7 -9 -20}).
+
+\section{Subiecte antrenament, 2021, testul 1}
+Fișierul \highlight{bac.in} conține cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[0,10^9]$}, separate prin câte un spațiu. Se cere să se afișeze pe ecran, în ordine descrescătoare, cele mai mari două numere de două cifre distincte care NU se află în fișier. Numerele afișate sunt separate printr-un spațiu, iar dacă nu există două astfel de numere, se afișează pe ecran mesajul \highlight{nu exista}. Proiectați un algoritm eficient din punctul de vedere al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul \highlight{bac.in} conține numerele \highlight{12 235 123 67 98 6 96 94 123 67 98 100} se afișează pe ecran, în această ordine,numerele \highlight{97 95}.
+
+
+\section{Subiect simulare, 2021}
+La proiectarea unui site web se utilizează elemente grafice realizate pe baza unor modele. Fiecare model este de formă pătrată și oricare două modele distincte au dimensiuni diferite ale laturilor. Toate elementele grafice realizate pe baza unui anumit model au aceeași formă și aceleași dimensiuni ca ale acestuia. În vederea asigurării elementelor grafice necesare, pentru fiecare model dintre cele utilizate se plătește o taxă unică de proiectare, de \highlight{$10$} lei, iar pentru fiecare element grafic realizat pe baza acelui model se plătește o sumă în lei, egală cu valoarea suprafeței acestuia (aria pătratului), calculată în centimetri pătrați.
+
+\vspace{0.2cm}
+\noindent Fișierul \highlight{bac.in} conține un șir de cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[1,10]$}, separate prin câte un spațiu, reprezentând dimensiunile laturilor tuturor elementelor grafice utilizate, date în centimetri; fiecare termen al șirului corespunde unui element grafic distinct. Se cere să se afișeze pe ecran suma totală plătită pentru asigurarea elementelor grafice necesare. Proiectați un algoritm eficient din punctul de vedere al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele \highlight{1 7 2 1 1 2 1 7 2} se afișează pe ecran valoarea \highlight{$144$} (\highlight{$10$} lei pentru modelul de lățime \highlight{$1$} cm și câte \highlight{$1\times1$} lei pentru fiecare dintre cele patru elemente grafice care îl au la bază, \highlight{$10$} lei pentru modelul de lățime \highlight{$2$} cm și câte \highlight{$2\times2$} lei pentru fiecare dintre cele trei elemente grafice care îl au la bază, respectiv \highlight{$10$} lei pentru modelul de lățime \highlight{$7$} cm și câte \highlight{$7\times7$} lei pentru fiecare dintre cele două elemente grafice care îl au la bază).
+
+\newpage
+\section{Model subiect, 2021}
+Fișierul \highlight{cheltuieli.in} are cel mult \highlight{$10^6$} linii, fiecare linie conținând câte trei numere naturale din intervalul \highlight{$[1,10^2]$}, reprezentând, în această ordine, date despre câte o achiziție: tipul produsului cumpărat, numărul de produse de acest tip cumpărate, respectiv prețul unui astfel de produs la acel moment. Numerele aflate pe aceeași linie sunt separate prin câte un spațiu.
+
+\vspace{0.2cm}
+\noindent Se cere să se afișeze pe ecran cea mai mare sumă cheltuită pentru toate produsele de același tip, precum și numărul de tipuri de produse pentru care s-a obținut această sumă. Proiectați un algoritm eficient din punctul de vedere al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul \highlight{cheltuieli.in} are conținutul următor
+\begin{verbatim}
+4  1 10
+1 16  1
+4  2  8
+2  1  5
+1  5  2
+\end{verbatim}
+se afișează pe ecran: \highlight{26 2} (s-a cheltuit suma maximă \highlight{$26$} pentru produsele de tipul \highlight{$1$} și \highlight{$4$}: \highlight{26=16·1+5·2=1·10+2·8})
+
+\section{Sesiunea august-septembrie 2020}
+Fișierul {bac.txt} conține un șir de cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[0,10^9]$}, separate prin câte un spațiu. Se cere să se afișeze pe ecran, separate printr-un spațiu, două numere naturale \highlight{$a$} și \highlight{$b$} (\highlight{$a < b$}), astfel încât oricare termen al șirului care are exact două cifre să aparțină intervalului \highlight{(a,b)}, iar valoarea expresiei \highlight{$b-a$} să fie minimă. Dacă șirul nu are niciun termen de două cifre, pe ecran se afișează mesajul \highlight{nu exista}. Proiectați un algoritm eficient din punctul de vedere al timpului de executare și al spațiului de memorie utilizat.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține valorile \highlight{7 2 40 5 11 15 10 122 18 350} se afișează pe ecran numerele \highlight{9 41}.
+
+
+\section{Sesiunea iunie-iulie 2020}
+Un șir finit se numește palindromic dacă parcurgându-l termen cu termen, de la stânga la dreapta sau de la dreapta la stânga se obține același șir de valori.
+
+\noindent Exemplu: șirul \highlight{12 13 16 13 12} este palindromic.
+
+\vspace{0.2cm}
+\noindent Fișierul \highlight{bac.in} conține un șir de cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[1,10^3]$}, separate prin câte un spațiu. Se cere să se afișeze pe ecran mesajul \highlight{DA}, dacă numerele din șir pot fi rearanjate, astfel încât să formeze un șir palindromic, sau mesajul \highlight{NU} în caz contrar. Proiectați un algoritm eficient din punctul de vedere al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele \highlight{100 30 100 30 500 30 30} se afișează pe ecran \highlight{DA}
+
+\section{Sesiunea specială 2020}
+Se numește \textbf{vârf} într-un șir de numere naturale un termen al șirului care este strict mai mare decât fiecare dintre cei doi termeni vecini cu el, aflați în șir pe poziția din stânga, respectiv din dreapta sa.
+
+\vspace{0.2cm}
+\noindent Fișierul bac.in conține un șir de cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[0,10^9]$}, separate prin câte un spațiu. Se cere să se afișeze pe ecran vârful din șirul aflat în fișier pentru care valoarea absolută a diferenței dintre cei doi vecini ai săi este minimă. Dacă există mai multe astfel de numere, se afișează cel mai mare dintre ele, iar dacă nu există niciun vârf, se afișează pe ecran mesajul \highlight{nu exista}. Proiectați un algoritm eficient din punctul de vedere al timpului de executare și al spațiului de memorie utilizat.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține șirul \highlight{$2 7 10 5 6 2 1 3 20 17 9 11 7 3 10 6 2$} se afișează pe ecran \highlight{$11$}
+
+\section{Subiecte antrenament, 2020, testul 1}
+Se consideră șirul \highlight{1, 1, 2, 5, 13, 34, 89, 233, 610, \dots}, definit astfel: $f_1=f_2=1$, $f_n = 3 \times f_(n-1) - f_(n-2)$(unde \highlight{n} este un număr natural \highlight{$n \geq 3$}).
+
+\vspace{0.2cm}
+\noindent Se citesc de la tastatură două numere naturale \highlight{$x$} și \highlight{$y$} (\highlight{$x \leq y \leq 10^9$}), valorile a doi termeni aflați pe poziții consecutive în șirul dat, și se cere să se scrie în fișierul text \highlight{bac.txt}, în ordine descrescătoare, separați prin câte un spațiu, toţi termenii şirului care sunt mai mici sau egali cu \highlight{$y$}. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate şi al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă se citesc numerele \highlight{89 233} fişierul \highlight{bac.txt} va conţine numerele \highlight{233 89 34 13 5 2 1 1}
+
+
+\section{Subiecte antrenament, 2020, testul 2}
+Fişierul \highlight{bac.in} conţine un şir de numere naturale distincte, din intervalul \highlight{$[1,10^9]$}. Numerele din şir sunt separate prin câte un spaţiu şi cel puţin trei dintre ele au penultima cifră \highlight{$2$} și ultima cifră \highlight{$0$}. Se cere să se afișeze pe ecran cele mai mari trei numere din şir cu proprietatea că au penultima cifră \highlight{$2$} și ultima cifră \highlight{$0$}. Numerele determinate sunt afişate în ordine crescătoare, separate prin câte un spaţiu. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate şi al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fişierul conţine numerele \highlight{9731 50 112 20 8 16 8520 3 2520 1520} pe ecran se vor afişa, în această ordine, numerele: \highlight{1520 2520 8520}
+
+\section{Subiecte antrenament, 2020, testul 3}
+Fișierul \highlight{bac.in} conține un șir de cel mult \highlight{$10^6$} numere întregi din intervalul \highlight{$[-10^9,10^9]$}, separate prin câte un spațiu. Cel puțin un număr din șir este negativ.
+
+\vspace{0.2cm}
+\noindent Se cere să se afişeze pe ecran lungimea maximă a unei secvenţe a şirului care fie începe, fie se încheie cu un număr negativ. O secvenţă este formată din termeni aflaţi pe poziţii consecutive în şir, iar lungimea secvenței este egală cu numărul de termeni ai acesteia. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate şi al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele \highlight{12 25 -6 7 80 -75 101 -6 52 -124 87 99 210} pe ecran se afișează \highlight{11} (corespunzător secvenței \highlight{-6 7 80 -75 101 -6 52 -124 87 99 210}).
+
+\section{Subiecte antrenament, 2020, testul 4}
+Fişierul \highlight{bac.txt} conţine, \textbf{în ordine descrescătoare}, cel puţin două şi cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[0,10^9]$}, separate prin câte un spațiu,  Se cere să se afişeze pe ecran, în ordine strict descrescătoare, separate prin câte un spaţiu, numai numerele care apar în fişier de exact două ori. Dacă nu există niciun astfel de număr, se afișează pe ecran mesajul \highlight{nu exista}. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate şi al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele \highlight{100 50 50 50 49 49 36 16 16 12 10 10 9 7 7} pe ecran se afișează, în această ordine, numerele \highlight{49 16 10 7}.
+
+\section{Subiecte antrenament, 2020, testul 5}
+Fișierul \highlight{bac.txt} conține un șir de cel mult \highlight{$10^6$} numere întregi din intervalul \highlight{$[-10^3,10^3]$}, separate prin câte un spațiu. Se cere să se afișeze pe ecran suma maximă obținută adunând numere de pe poziții consecutive în șirul aflat în fișier. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate și al timpului de executare. 
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul \highlight{bac.txt} conține valorile \highlight{4 -6 7 2 -1 4 -10 -3 9 2 -2}, se afișează pe ecran numărul \highlight{$12$}.
+
+
+\section{Subiecte antrenament, 2020, testul 6}
+Se citesc de la tastatură două numere naturale din intervalul \highlight{$[1,81]$}, \highlight{$p1$} și \highlight{$p2$}, și se cere scrierea în fișierul \highlight{bac.out} a tuturor numerelor naturale cu exact \highlight{$7$} cifre, pentru care produsul primelor două cifre este egal cu \highlight{$p1$}, cele trei cifre din mijloc sunt egale între ele, iar produsul ultimelor două cifre este egal cu \highlight{$p2$}. Numerele apar în fișier în ordine strict descrescătoare, fiecare pe câte o linie. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate și al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă \highlight{$p1=12$}, iar \highlight{$p2=8$}, atunci \highlight{$2633324$} și \highlight{$3400018$} sunt două dintre cele \highlight{$160$} de numere cu proprietatea cerută (\highlight{$2\times6=3\times4=12$} și \highlight{$2\times4=1\times8=8$}).
+
+
+\section{Subiecte antrenament, 2020, testul 7}
+Fișierul \highlight{bac.txt} conține un șir de cel mult \highlight{$10^6$} numere întregi din intervalul \highlight{$[-10^3,10^3]$}, separate prin câte un spațiu. Se cere să se afișeze pe ecran suma minimă obținută adunând numere de pe poziții consecutive în șirul aflat în fișier. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate și al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul \highlight{bac.txt} conține valorile \highlight{-4 6 -7 -2 1 -4 10 3 -9 -2 2} se afișează pe ecran numărul \highlight{$-12$}
+
+\newpage
+\section{Subiecte antrenament, 2020, testul 8}
+Fișierul \highlight{bac.in} conține un șir de cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[0,10^9]$}, separate prin câte un spațiu. Se cere să se afișeze pe ecran pozițiile din șir pe care se află termeni precedați de un număr maxim de valori care au cifra unităților egală cu cifra unităților lor. Numerele afișate sunt separate prin câte un spațiu. Proiectați un algoritm eficient din punctul de vedere al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul \highlight{bac.in} conține numerele \highlight{112 12 5 25 88 15 2 19 32 179 35 621} pe ecran se afișează numerele de mai jos \highlight{9 11} (termenii \highlight{$32$}, respectiv \highlight{$35$} respectă proprietatea cerută).
+
+\section{Subiecte antrenament, 2020, testul 9}
+Numim \textbf{k-secvență} într-un șir de numere naturale, o succesiune de termeni aflați pe poziții consecutive în șir, cu proprietatea că sunt divizibili cu numărul natural nenul \highlight{$k$}. Lungimea secvenței este egală cu numărul de termeni ai săi.
+
+\vspace{0.2cm}
+\noindent Fișierul \highlight{bac.txt} conține numere naturale din intervalul \highlight{$[0,10^9]$}: pe prima linie un număr nenul \highlight{$k$}, iar pe a doua linie un șir de cel mult \highlight{$10^6$} numere, separate prin câte un spațiu. Cel puțin un termen din șir este divizibil cu \highlight{$k$}. Se cere să se afișeze pe ecran două valori, separate printr-un spațiu, reprezentând lungimea maximă a unei k-secvențe din șirul aflat în fișier, respectiv numărul de astfel de secvențe. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate și al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține
+\begin{verbatim}
+5
+2 10 5 20 21 0 10 60 15 3 9 20 20 5 45
+\end{verbatim}
+se afișează \highlight{4 2}
+
+\section{Subiecte antrenament, 2020, testul 10}
+Un șir format din cel puțin trei termeni formează o progresie aritmetică de rație \highlight{$r$} dacă diferența dintre oricare termen al acestuia și cel aflat pe poziția consecutivă în șir este egală cu \highlight{$r$}.
+
+\vspace{0.2cm}
+\noindent Fișierul text \highlight{bac.txt} conține un șir de cel puțin trei și cel mult \highlight{$10^6$} numere întregi din intervalul \highlight{$[-10^8,10^8]$}. Numerele sunt separate prin câte un spațiu. Se cere să se afișeze pe ecran rația unei secvențe din șir cu număr maxim de termeni, secvență care formează o progresie aritmetică. Dacă există mai multe astfel de secvențe de lungime maximă se afișează rația cea mai mare, iar dacă nu există nicio astfel de secvență, se afișează pe ecran mesajul \highlight{nu exista}. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate și al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fișierul conține numerele \highlight{4 9 14 19 18 16 8 5 3 1 -1 -3 -5 -7} pe ecran se afișează valoarea \highlight{$-2$} (corespunzătoare secvenței \highlight{5 3 1 -1 -3 -5 -7}).
+
+\section{Subiecte antrenament, 2020, testul 11}
+Fişierul bac.txt conţine un şir crescător de cel mult \highlight{$10^6$} numere naturale din intervalul \highlight{$[0,10^9]$}, separate prin câte un spaţiu. Se cere să se afişeze pe ecran fiecare număr distinct din şir, urmat de numărul de apariţii ale acestuia în şir. Numerele afișate sunt separate prin câte un spațiu. Proiectați un algoritm eficient din punctul de vedere al memoriei utilizate și al timpului de executare.
+
+\vspace{0.2cm}
+\noindent \textbf{Exemplu:} dacă fişierul \highlight{bac.txt} conține numerele \highlight{0 0 0 5 5 5 5 7 7 11 20 20} se afișează \highlight{0 3 5 4 7 2 11 1 20 2}
+
+\end{document}
